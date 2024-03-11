@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.Scanner;
 
-// Student class to represent each student
+
 class Student {
     private int id;
     private String name;
@@ -34,7 +34,7 @@ class Student {
     }
 }
 
-// AttendanceManager class to manage attendance of students
+
 class AttendanceManager {
     private Connection connection;
 
@@ -65,7 +65,6 @@ class AttendanceManager {
         }
     }
 
-    // Method to remove a student from the attendance list
     public void removeStudent(int id) {
         String query = "DELETE FROM students WHERE id = ?";
         try {
@@ -82,12 +81,12 @@ class AttendanceManager {
         }
     }
 
-    // Method to mark a student as present
+  
     public void markPresent(int id) {
         updateAttendance(id, true);
     }
 
-    // Method to mark a student as absent
+  
     public void markAbsent(int id) {
         updateAttendance(id, false);
     }
@@ -109,7 +108,7 @@ class AttendanceManager {
         }
     }
 
-    // Method to print the attendance status of all students
+
     public void printAttendance() {
         String query = "SELECT * FROM students";
         try {
